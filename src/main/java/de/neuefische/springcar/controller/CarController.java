@@ -1,16 +1,12 @@
 package de.neuefische.springcar.controller;
 
 import de.neuefische.springcar.model.Car;
-import de.neuefische.springcar.model.CarService;
+import de.neuefische.springcar.service.CarService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
 public class CarController {
-
     private CarService carService;
 
     public CarController() {

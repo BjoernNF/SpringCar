@@ -1,6 +1,8 @@
-package de.neuefische.springcar.model;
+package de.neuefische.springcar.service;
 
-import java.util.List;
+import de.neuefische.springcar.model.Car;
+import de.neuefische.springcar.repository.CarRepository;
+
 import java.util.UUID;
 
 public class CarService {
