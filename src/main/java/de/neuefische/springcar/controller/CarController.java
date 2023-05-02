@@ -1,16 +1,18 @@
 package de.neuefische.springcar.controller;
 
 import de.neuefische.springcar.model.Car;
+import de.neuefische.springcar.repository.CarRepository;
 import de.neuefische.springcar.service.CarService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
 public class CarController {
-    private CarService carService;
+    private final CarService carService;
 
     public CarController() {
-        carService = new CarService();
+        CarRepository carRepository = new CarRepository();
+        carService = new CarService(carRepository);
     }
 
     @PostMapping("/addcar")

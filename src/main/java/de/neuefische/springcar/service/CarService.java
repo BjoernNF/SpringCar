@@ -6,9 +6,9 @@ import de.neuefische.springcar.repository.CarRepository;
 import java.util.UUID;
 
 public class CarService {
-    private CarRepository carRepository = new CarRepository();
+    private final CarRepository carRepository;
 
-    public CarService() {
+    public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
     }
 
