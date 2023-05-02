@@ -19,10 +19,17 @@ public class CarRepository {
     }
 
     public void deleteCar(UUID id) {
-        cars.remove(id);
+        if (cars.containsKey(id)) {
+            cars.remove(id);
+        }
+        else
+        {
+            throw new IllegalArgumentException("id not found");
+        }
     }
 
     public void updateCar(UUID id, Car car) {
-        cars.put(id, car);
+        car.setId(id);
+        cars.replace(id, car);
     }
 }
